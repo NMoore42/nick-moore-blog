@@ -1,0 +1,20 @@
+extends layout.pug
+
+block content
+  article.grid-container.portfolio-intro
+    div
+
+      h1 My Project Portfolio
+
+      p.lead.text-light
+        | An overview of my completed projects
+  article.grid-container.portfolio-index
+
+    .grid-x.grid-margin-x.small-up-2.medium-up-2.large-up-3
+
+      each project in projects
+        .cell
+          a(href=`http://localhost:3000/projects/${project.id}`)
+            img.thumbnail(src= project.image_urls[0])
+            div(class='center')
+              h8= project.project_name
